@@ -1,18 +1,23 @@
 # Droneload
 
-## Create ROSS project
+## Create ROS Project
 
-To create the ROSS project do :
+To initiate the ROS project with the necessary dependencies, use the following commands:
 
+```bash
+https://github.com/Hugo-dgn/drone-pilot/blob/master/ubuntu_sim_ros_noetic.sh
+bash ubuntu_sim_ros_noetic.sh pilot
 ```
-catkin create pilot
-```
 
-## Clone repository:
+This will generate a ROS project named "pilot" in your current directory.
 
-Clone the repository as the `src` folder in your ROSS project
+## Clone Repository:
 
-```
+Clone the repository into the `src` folder within your ROS project:
+
+```bash
 cd pilot
-git clone https://github.com/Hugo-dgn/drone-pilot src
+git init
+git git remote add origin https://github.com/Hugo-dgn/drone-pilot
+git pull
 ```
