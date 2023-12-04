@@ -2,3 +2,4 @@
 .rosinstall.bak
 mavlink
 mavros
+__pycache__
