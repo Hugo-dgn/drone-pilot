@@ -21,3 +21,11 @@ git init
 git git remote add origin https://github.com/Hugo-dgn/drone-pilot
 git pull
 ```
+
+## Launch the gazebo simulation
+
+To launch the simulation :
+
+```
+roslaunch pilot main.launch
+```
