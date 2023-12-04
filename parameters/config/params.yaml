@@ -1,0 +1,34 @@
+drone_state : 0
+main_loop_rate : 20
+
+window_id : -1
+
+pub_drone_state : "mavros/state"
+pub_drone_local_pose_set_point : "mavros/setpoint_position/local"
+pub_drone_local_pose : '/mavros/local_position/pose'
+
+service_drone_arming : "mavros/cmd/arming"
+service_drone_set_mode : "mavros/set_mode"
+
+pub_front_camera : "/droneload/preprocess/front_camera"
+pub_main_rectangle : "/droneload/rectangles/main"
+pub_all_rectangle : "/droneload/rectangles/all"
+pub_main_rectangle : "/droneload/rectangles/main"
+pub_all_rectangles : "/droneload/rectangles/all"
+pub_window_path : "/droneload/path_window"
+pub_rectangle_window : "/droneload/rectangle_window"
+
+
+pub_front_camera_image_raw : '/iris_depth_camera/camera/rgb/image_raw'
+
+path_front_camera_calibration : "/home/hugo/Documents/droneload/pilot/src/front_camera.yaml"
+
+path_window_points : 100
+reposition_threeshold : 0.5
+window_min_dist_next_point : 0.2
+
+front_rect_fit : 0.3
+front_rect_tol : 0.1
+front_rect_max_lifetime : 10
+front_rect_min_fit_success : 5
+front_image_size : 480

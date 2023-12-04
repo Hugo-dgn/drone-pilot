@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Include the MAVROS node with SITL and Gazebo -->
+	<include file="$(find px4)/launch/mavros_posix_sitl.launch">
+		<arg name="vehicle" value="iris_depth_camera" />
+		<arg name="x" value="0" />
+		<arg name="y" value="0" />
+		<arg name="z" value="0" />
+		<arg name="Y" value="0" />
+		<arg name="world" value="$(find pilot)/worlds/window.world" />
+	</include>
+
+	<include file="$(find parameters)/launch/main.launch">
+	</include>
+
+	<node pkg="pilot" type="main.py" name="pilot" required="true" output="screen" />
+
+	<include file="$(find image_preprocess)/launch/main.launch">
+	</include>
+
+	<include file="$(find camera_feedback)/launch/main.launch">
+	</include>
+
+	<include file="$(find window_detector)/launch/main.launch">
+	</include>
+
+	<include file="$(find window_path_finder)/launch/main.launch">
+	</include>
+
+	<include file="$(find window_pos_feedback)/launch/main.launch">
+	</include>
+</launch>

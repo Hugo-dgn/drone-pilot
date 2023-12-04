@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="window_pos_feedback" type="window_feedback.py" name="window_feedback" required="true" output="screen" />
+</launch>

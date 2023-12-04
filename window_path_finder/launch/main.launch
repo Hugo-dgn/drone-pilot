@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="window_path_finder" type="find_path_window.py" name="window_path_finder" required="true" output="screen" />
+</launch>

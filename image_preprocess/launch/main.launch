@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="image_preprocess" type="preprocess.py" name="preprocess" required="true" output="screen" />
+</launch>
