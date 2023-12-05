@@ -36,6 +36,30 @@ source devel/setup.bash
 catkin build
 ```
 
+## Install Dependencies
+
+To install the dependencies, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Setup Parameters
+
+In the file `pilot/src/parameters/params`, you must change this line:
+
+```yaml
+path_front_camera_calibration: "~/Documents/droneload/pilot/src/front_camera.yaml"
+```
+
+to:
+
+```yaml
+path_front_camera_calibration: "path_to_pilot/pilot/src/front_camera.yaml"
+```
+
+where `path_to_pilot` is the path to the folder where you have set up the ROS project.
+
 ## Launch the Gazebo Simulation
 
 First, source all the dependencies:

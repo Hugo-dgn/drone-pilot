@@ -18,7 +18,7 @@ pub_rectangle_window : "/droneload/parameters/pub_rectangle_window"
 
 pub_front_camera_image_raw : '/iris_depth_camera/camera/rgb/image_raw'
 
-path_front_camera_calibration : "/home/hugo/Documents/droneload/pilot/src/front_camera.yaml"
+path_front_camera_calibration : "~/Documents/droneload/pilot/src/front_camera.yaml"
 
 path_window_points : 100
 reposition_threeshold : 0.5
