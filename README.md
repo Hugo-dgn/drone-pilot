@@ -20,7 +20,7 @@ Clone the repository into the `src` folder within your ROS project:
 cd pilot/src
 git init
 git remote add origin https://github.com/Hugo-dgn/drone-pilot
-git pull
+git pull origin master
 cd ..
 source devel/setup.bash
 catkin build
