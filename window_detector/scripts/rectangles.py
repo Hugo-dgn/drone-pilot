@@ -84,7 +84,7 @@ if __name__ == "__main__":
     front_image_size = rospy.get_param("/droneload/parameters/front_image_size")
     
     pub_main_rectangle = rospy.get_param("/droneload/parameters/pub_main_rectangle")
-    pub_all_rectangles = rospy.get_param("/droneload/parameters/pub_all_rectangles")
+    pub_all_rectangles = rospy.get_param("/droneload/parameters/pub_all_rectangle")
     pub_front_camera = rospy.get_param("/droneload/parameters/pub_front_camera")
     
     front_rect_tol = rospy.get_param("/droneload/parameters/front_rect_tol")

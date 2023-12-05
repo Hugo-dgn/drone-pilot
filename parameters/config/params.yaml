@@ -13,11 +13,8 @@ service_drone_set_mode : "mavros/set_mode"
 pub_front_camera : "/droneload/preprocess/front_camera"
 pub_main_rectangle : "/droneload/rectangles/main"
 pub_all_rectangle : "/droneload/rectangles/all"
-pub_main_rectangle : "/droneload/rectangles/main"
-pub_all_rectangles : "/droneload/rectangles/all"
 pub_window_path : "/droneload/path_window"
-pub_rectangle_window : "/droneload/rectangle_window"
-
+pub_rectangle_window : "/droneload/parameters/pub_rectangle_window"
 
 pub_front_camera_image_raw : '/iris_depth_camera/camera/rgb/image_raw'
 
