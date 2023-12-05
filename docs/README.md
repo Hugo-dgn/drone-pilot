@@ -1,5 +1,15 @@
 # Drone Autopilot
 
+This project aims to create a drone with the following capabilities:
+
+- Going through a window
+- Going through a tunnel
+- Scanning QR codes
+- Picking up objects and delivering them
+
+Currently, the drone is capable of autonomously going through a window.
+
+
 ## Create ROS Project
 
 To initiate the ROS project with the necessary dependencies, use the following commands:
