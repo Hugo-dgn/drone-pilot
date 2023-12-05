@@ -1,4 +1,4 @@
-# Droneload
+# Drone autopilot
 
 ## Create ROS Project
 
@@ -12,7 +12,7 @@ rm ubuntu_sim_ros_noetic.sh
 
 This will generate a ROS project named `pilot` in your current directory.
 
-## Clone Repository:
+## Clone Repository
 
 Clone the repository into the `src` folder within your ROS project:
 
