@@ -1,4 +1,4 @@
-# Drone autopilot
+# Drone Autopilot
 
 ## Create ROS Project
 
@@ -26,17 +26,25 @@ source devel/setup.bash
 catkin build
 ```
 
-## Launch the gazebo simulation
+## Launch the Gazebo Simulation
 
-To launch the simulation:
+First, source all the dependencies:
+
+```bash
+source src/rossetup.bash
+source devel/setup.bash
+source src/gzsetup.bash
+```
+
+Then, launch the simulation:
 
 ```bash
 roslaunch pilot main.launch
 ```
 
-## Control the drone
+## Control the Drone
 
-With the file `ground.py`, you can control the drone.
+Use the `ground.py` file to control the drone.
 
 To switch flight mode:
 
@@ -44,9 +52,9 @@ To switch flight mode:
 python ground.py switch n
 ```
 
-Where `n` is the number representing the flight mode:
-- 0: Altitude flight mode
-- 1: Offboard flight mode to go through the window
+Here, `n` is the number representing the flight mode:
+- `0`: Altitude flight mode
+- `1`: Offboard flight mode to go through the window
 
 To choose which window to go through:
 
@@ -54,4 +62,4 @@ To choose which window to go through:
 python ground.py window id
 ```
 
-Where `id` is the ID of the target window. This ID is displayed on the top right corner of the window on the camera feed back.
+Here, `id` is the ID of the target window. This ID is displayed on the top right corner of the window on the camera feed.
