@@ -5,7 +5,7 @@
 To initiate the ROS project with the necessary dependencies, use the following commands:
 
 ```bash
-wget https://github.com/Hugo-dgn/drone-pilot/blob/master/ubuntu_sim_ros_noetic.sh
+wget https://raw.githubusercontent.com/Hugo-dgn/drone-pilot/master/ubuntu_sim_ros_noetic.sh
 bash ubuntu_sim_ros_noetic.sh pilot
 rm ubuntu_sim_ros_noetic.sh
 ```
