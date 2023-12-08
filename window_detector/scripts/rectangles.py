@@ -42,8 +42,11 @@ def process_image(camera_msg):
         # Convertir l'image ROS en image OpenCV
         image = bridge.imgmsg_to_cv2(camera_msg, "mono8")
 
-        contours = droneload.rectFinder.get_contours_canny(image, seuil=20, kernel_size=3)
-        lines = droneload.rectFinder.get_lines(contours)
+        contours = droneload.rectFinder.get_contours_canny(image, seuil=front_rect_seuil, kernel_size=front_rect_ksize)
+        rminLineLength = 1/front_rect_houghlength
+        rmaxLineGap = 1/front_rect_houghgap
+        threshold = front_rect_houghthreshold
+        lines = droneload.rectFinder.get_lines(contours, rminLineLength, rmaxLineGap, threshold)
         rects = droneload.rectFinder.find_rectangles(lines, tol=front_rect_tol)
         
         droneload.rectFinder.remove_old_rects(front_rect_max_lifetime)
@@ -51,7 +54,7 @@ def process_image(camera_msg):
         rects_msg = Rectangles2D()
         droneload.rectFinder.fit(rects, front_rect_fit)
         
-        for rect, _, _ in droneload.rectFinder.get_current_rects():
+        for rect in droneload.rectFinder.get_current_rects():
             rects_msg.rectangles.append(get_msg_from_rect(rect))
         all_pub.publish(rects_msg)
         
@@ -60,7 +63,7 @@ def process_image(camera_msg):
             rect = droneload.rectFinder.get_main_rect(front_rect_min_fit_success)
             Data.main_rect = rect
         else:
-            for rect, _, _ in droneload.rectFinder.get_current_rects():
+            for rect in droneload.rectFinder.get_current_rects():
                 if rect.id == window_id:
                     Data.main_rect = rect
                     break
@@ -91,6 +94,11 @@ if __name__ == "__main__":
     front_rect_fit = rospy.get_param("/droneload/parameters/front_rect_fit")
     front_rect_max_lifetime = rospy.get_param("/droneload/parameters/front_rect_max_lifetime")
     front_rect_min_fit_success = rospy.get_param("/droneload/parameters/front_rect_min_fit_success")
+    front_rect_seuil = rospy.get_param("/droneload/parameters/front_rect_seuil")
+    front_rect_ksize = rospy.get_param("/droneload/parameters/front_rect_ksize")
+    front_rect_houghlength = rospy.get_param("/droneload/parameters/front_rect_houghlength")
+    front_rect_houghgap = rospy.get_param("/droneload/parameters/front_rect_houghgap")
+    front_rect_houghthreshold = rospy.get_param("/droneload/parameters/front_rect_houghthreshold")
     
     droneload.rectFinder.calibration(path_front_camera_calibration)
     droneload.rectFinder.calibrate_image_size(front_image_size)

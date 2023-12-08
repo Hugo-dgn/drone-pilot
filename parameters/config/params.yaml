@@ -18,7 +18,7 @@ pub_rectangle_window : "/droneload/parameters/pub_rectangle_window"
 
 pub_front_camera_image_raw : '/iris_depth_camera/camera/rgb/image_raw'
 
-path_front_camera_calibration : "~/Documents/droneload/pilot/src/front_camera.yaml"
+path_front_camera_calibration : "/home/hugo/Documents/droneload/pilot/src/front_camera.yaml"
 
 path_window_points : 100
 reposition_threeshold : 0.5
@@ -29,3 +29,8 @@ front_rect_tol : 0.1
 front_rect_max_lifetime : 10
 front_rect_min_fit_success : 5
 front_image_size : 480
+front_rect_seuil : 30
+front_rect_ksize : 3
+front_rect_houghlength : 10
+front_rect_houghgap : 100
+front_rect_houghthreshold : 100

@@ -3,4 +3,5 @@
 mavlink
 mavros
 __pycache__
+/parameters/config/params.yaml
 env
