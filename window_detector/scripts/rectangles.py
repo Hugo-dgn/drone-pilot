@@ -7,7 +7,6 @@ from droneload_msgs.msg import Point2D, Rectangle2D, Rectangles2D
 from sensor_msgs.msg import Image
 
 import droneload
-import cv2
 
 class Data:
     main_rect = None

@@ -79,7 +79,7 @@ pip install -r requirements.txt
 
 ## Setup Parameters
 
-In the file `pilot/src/parameters/params`, you must change this line:
+In the file `pilot/src/parameters/config/params`, you must change this line:
 
 ```yaml
 path_front_camera_calibration: "~/Documents/droneload/pilot/src/front_camera.yaml"

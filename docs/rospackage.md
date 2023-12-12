@@ -54,6 +54,33 @@ The parameter server is set up in the `parameters` package. This defines paramet
 - `front_rect_min_fit_success`: Minimum detection success to define a rectangle as the main
 - `front_image_size`: Size of the image given by the front camera
 
-## pilot
+## Pilot
 
-The package `pilot` is the main package of this project. It put together all the compution provided by the other and performe the navigation of the drone.
+The `pilot` package serves as the primary package for this project, encompassing all computations provided by others and orchestrating the navigation of the drone.
+
+The main loop of the ROS project is located in the `main.py` file. The rate of the main loop is defined by the parameter `/droneload/parameters/main_loop_rate`. Within this loop, the flight state (in the finite state machine) is checked, and transitions are performed if necessary. Currently, the possible states are:
+- 0: Position mode flight
+- 1: Offboard mode flight to navigate through windows
+
+In the `drone.py` file, the definition of the Python class representing the drone can be found. The chosen design for implementing this class is as follows:
+- Every parameter related to the drone, such as its flight state or position, is an attribute of the class.
+- The ROS callback functions that change the attributes of the class are methods of the class.
+- Minimize the use of `while` loops in the methods of the class to ensure that security and state flight mode checks in the main loop are still performed. If something must be called periodically (like the navigation system in offboard mode), call it in the main loop rather than creating another loop.
+
+Therefore, the majority of the code in the main loop should revolve around the `drone` class.
+
+## Window Detector
+
+The `window_detector` package utilizes the image from the front camera to detect rectangles that might represent windows and publishes them on the `/droneload/parameters/pub_all_rectangle` topic. The rectangle assumed to be the actual window is published on the `/droneload/parameters/pub_main_rectangle` topic.
+
+This package primarily relies on the `droneload` package, which is developed separately from this project and can be found at: [https://github.com/Hugo-dgn/droneload](https://github.com/Hugo-dgn/droneload). For further documentation, please refer to the repository.
+
+## Window Path Finder
+
+The `window_path_finder` package utilizes the `main rectangle` detected and published by the `window_detector` to compute the optimal path for navigating through the identified window. It then publishes the found path to the `/droneload/parameters/path_window_points` topic.
+
+This package primarily depends on the `droneload` package, which is developed separately from this project and can be found at: [https://github.com/Hugo-dgn/droneload](https://github.com/Hugo-dgn/droneload). For additional documentation, please consult the repository.
+
+## Window Position Feedback
+
+The `window_pos_feedback` package generates a `3D matplotlib plot` depicting the position of the drone in space and the detected object. Currently, the plot displays the positions of the `drone` and the `window`, as well as the calculated `path` for navigating through the window.
