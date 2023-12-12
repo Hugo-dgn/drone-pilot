@@ -64,6 +64,7 @@ cd pilot/src
 git init
 git remote add origin https://github.com/Hugo-dgn/drone-pilot
 git pull origin master
+git branch --set-upstream-to=origin/master master
 cd ..
 source devel/setup.bash
 catkin build
