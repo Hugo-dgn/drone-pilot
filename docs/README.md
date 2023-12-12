@@ -38,7 +38,6 @@ bash ./Tools/setup/ubuntu.sh
 
 Build PX4 SITL (Software-in-the-Loop) for Gazebo:
 ```bash
-cd src/Firmware
 git submodule update --init --recursive
 DONT_RUN=1 make px4_sitl_default gazebo
 ```
