@@ -9,6 +9,39 @@ This project aims to create a drone with the following capabilities:
 
 Currently, the drone is capable of autonomously going through a window.
 
+Your provided Markdown appears to be well-formed. However, I've made some minor adjustments for better readability:
+
+## Install PX Toolchain
+
+Ensure that you have a clean installation of Ubuntu 20 on your computer.
+
+Look for updates and install Git if not already done:
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install git
+```
+
+Clone the repository into your home directory:
+```bash
+cd ~
+mkdir src
+cd src
+git clone https://github.com/PX4/Firmware.git --recursive
+```
+
+Run the setup file:
+```bash
+cd Firmware
+bash ./Tools/setup/ubuntu.sh
+```
+
+Build PX4 SITL (Software-in-the-Loop) for Gazebo:
+```bash
+cd src/Firmware
+git submodule update --init --recursive
+DONT_RUN=1 make px4_sitl_default gazebo
+```
 
 ## Create ROS Project
 
