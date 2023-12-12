@@ -5,7 +5,7 @@ contourpy==1.0.7
 cycler==0.11.0
 distro==1.8.0
 docutils==0.20.1
-droneload @ git+https://github.com/Hugo-dgn/droneload@29634a5382e49a5ef29bf6eef362aa0232752b38
+droneload @ git+https://github.com/Hugo-dgn/droneload@17fc8bd4193b75a3b93dddcfc63f698bf49020ca
 exceptiongroup==1.1.1
 filelock==3.12.0
 fonttools==4.39.3
