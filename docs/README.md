@@ -45,7 +45,7 @@ DONT_RUN=1 make px4_sitl_default gazebo
 
 ## Create ROS Project
 
-To initiate the ROS project with the necessary dependencies, use the following commands:
+To initiate the ROS project with the necessary dependencies, use the following commands in the directory of your choice:
 
 ```bash
 wget https://raw.githubusercontent.com/Hugo-dgn/drone-pilot/master/ubuntu_sim_ros_noetic.sh
@@ -91,7 +91,7 @@ to:
 path_front_camera_calibration: "path_to_pilot/pilot/src/front_camera.yaml"
 ```
 
-where `path_to_pilot` is the path to the folder where you have set up the ROS project.
+where `path_to_pilot` is the path to the folder where you have set up the ROS project. Do not use `~`.
 
 ## Launch the Gazebo Simulation
 
