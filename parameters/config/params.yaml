@@ -21,12 +21,12 @@ pub_front_camera_image_raw : '/iris_depth_camera/camera/rgb/image_raw'
 path_front_camera_calibration : "/home/hugo/Documents/droneload/pilot/src/front_camera.yaml"
 
 path_window_points : 100
-reposition_threeshold : 0.5
+reposition_threeshold : 0.3
 window_min_dist_next_point : 0.2
 
 front_rect_fit : 0.3
 front_rect_tol : 0.1
-front_rect_max_lifetime : 10
+front_rect_max_lifetime : 3
 front_rect_min_fit_success : 5
 front_image_size : 480
 front_rect_seuil : 30

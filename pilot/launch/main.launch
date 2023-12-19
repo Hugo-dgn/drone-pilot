@@ -7,7 +7,7 @@
 		<arg name="y" value="0" />
 		<arg name="z" value="0" />
 		<arg name="Y" value="0" />
-		<arg name="world" value="$(find pilot)/worlds/3_window.world" />
+		<arg name="world" value="$(find pilot)/worlds/window.world" />
 	</include>
 
 	<include file="$(find parameters)/launch/main.launch">

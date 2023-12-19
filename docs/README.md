@@ -109,6 +109,12 @@ Then, launch the simulation:
 roslaunch pilot main.launch
 ```
 
+To initiate a takeoff, use the following command:
+
+```bash
+commander takeoff
+```
+
 ## Control the Drone
 
 Use the `ground.py` file to control the drone.
